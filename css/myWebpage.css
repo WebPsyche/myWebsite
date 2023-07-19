@@ -104,9 +104,11 @@ body::-webkit-scrollbar-thumb:hover{
     margin:auto;
     transition: 0.4s ease-in-out;
     cursor: pointer;
+    background: white;
 }
 .card img{
     width:100%;
+    margin-top: 35px;
 }
 .name{
     font-weight: bold;
@@ -299,11 +301,13 @@ body::-webkit-scrollbar-thumb:hover{
 /*about*/
 .aboutMeImg{
     width:70%;
+    height:;
     border:10px solid;
-    border-image: conic-gradient(from 65deg, rgb(255, 153, 0, 0) 175deg,rgb(255, 127, 255, 0.7) 170deg) 20 stretch;
+    border-image: conic-gradient(from 65deg, rgba(252, 252, 250, 0.908) 175deg,rgb(255, 127, 255, 0.7) 170deg) 20 stretch;
     box-shadow:rgba(242, 241, 242, 0.429) 0px 3px 2px;
     flood-opacity: 2;
     margin:50px 0;
+    background: rgb(255 127 255 / 40%);
 }
 #aboutme .big-container .content:first-of-type{
     padding:10px;
@@ -323,6 +327,91 @@ body::-webkit-scrollbar-thumb:hover{
     fill: rgb(255, 153, 0);
     color:rgb(255, 153, 0);
 }
+
+/*carousel*/
+.carousel-section{
+    width: 100%;
+}
+.carousel-container {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid;
+    border-image: conic-gradient(from 65deg, rgba(252, 252, 250, 0.908) 175deg,rgb(255, 127, 255, 0.7) 170deg) 20 stretch;    
+  }
+  
+  .carousel-slide {
+    display: flex;
+    height:268px;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    
+  }
+  
+  .carousel-slide img {
+    width: 400px;
+    height: auto;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    text-decoration: none;
+    color: #eee0ed;
+    cursor: pointer;
+    padding: 4px;
+    box-shadow: 0px 0px 10px 0px rgb(240, 235, 240);
+    border-radius:360px;
+    transition: 0.3px ;
+    background: rgba(204, 45, 219, 0.674);
+  }
+  .carousel-next:active, 
+  .carousel-prev:active{
+    background: rgba(79, 16, 85, 0.674);
+  }
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+
+.carousel-caption{
+    position: absolute;
+    top:90%;
+    left:0;
+    right:0;
+    transform: translateY(-50%);
+    font-size:1em;
+    background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0) 100%, rgba(0, 0, 0, 0) 0%);
+    margin:0 5%;
+    border:0px solid transparent;
+    transition: 0.5s ease-in-out;
+}
+
+/*progress*/
+.progress-bar{
+    height:4px;
+    width:100px;
+    position: absolute;
+    top:5%;
+   left:5%;
+   background-color: rgba(230, 221, 230, 0.593);
+   border-radius:2px ;
+   overflow: hidden;
+   box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.646);
+}
+.progress{
+    height:100%;
+    width:0%;
+    background: rgba(108, 19, 116, 0.674);
+    transition: width 0.5s ease-in-out;
+}
+
 /*resume section*/
 #resume .content{
     height:fit-content;

@@ -10,14 +10,6 @@ $animatedtext = document.querySelector('.animated-text typewritten-text')
 $name = document.querySelector('.name')
 //$animatedtext.textContent = "I'm a UI designer"
 
-var portfolios = [
-   " Frontend dev",
-   " UI designer",
-   " Graphic designer",
-   " Javascript devolper",
-   " Writer & Blogger",
-  " Politics and Music Lover",
-  " I'm a Follower of Yeshua"]
 
 
    //function loopOverText(texts,seconds){
@@ -30,12 +22,7 @@ var portfolios = [
    //     }, seconds);
    // }
    // loopOverText(port,2000)  
-    let string = portfolios[0]
-  let num = 0
-    setInterval(() => {
-      num++
-     // $name.textContent += num
-    }, 00);
+   
 
   var svgHandle = document.getElementsByClassName('svgHandle')
   for(let i = 0; i < svgHandle.length; i++){
@@ -120,3 +107,100 @@ function CheckViewPort(elem){
     bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+//pre oad images
+// Array to store image URLs
+const imageUrls = [
+  './pics/David 001.png',
+  './pics/David 002.png',
+  './pics/David 003.png',
+  "./pics/pics wf/001.jpg",
+  "./pics/pics wf/002.jpg",
+  "./pics/pics wf/003.jpg",
+  "./pics/pics wf/004.jpg",
+  "./pics/pics wf/005.jpg",
+  "./pics/pics wf/006.jpg",
+  "./pics/pics wf/007.jpg",
+  "./pics/pics wf/008.jpg",
+  "./pics/pics wf/009.jpg",
+  "./pics/pics wf/010.jpg"
+];
+
+// Preload images
+function preloadImages() {
+  for (let i = 0; i < imageUrls.length; i++) {
+    const img = new Image();
+    img.src = imageUrls[i];
+  }
+}
+
+// Call the preloadImages function
+preloadImages();
+
+//progressive
+var progress = document.querySelector('.progress');
+//carousel
+const slide = document.querySelector('.carousel-slide');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+const caption =  document.querySelector('.carousel-caption');
+
+let captionText = [
+  'Media Team Lagos',
+  'Media Team DLCF UNILAG',
+  'Gift presentation to my predecessor, Media Head and finalist',
+  "And that's me, Media Head DLCF UNILAG",
+  'Presentation to one of the finalists (to the left), most reliable shoulder on the team',
+  'Extreme left: former Media Head, former fellowship GC, Tech mentor and DevOps Engineer, finalist',
+  'Extreme left: A seasoned Graphic designer, next to him, A media guru!',
+  'Extreme right: Boss lady, mummy of all, Team financial and welfare sec.',
+  'Center: Scholary Kid on the team, moving to Idi Araba, Extreme right: Most quiet Audio Engineer', 
+  'To her right: an Innovative Media mind, To her left: A mathematician, media transport manager and more',
+]
+let captionCount = 0;
+let position = 0;
+const slideWidth = slide.clientWidth;
+const slideCount = slide.childElementCount;
+let slideIndicator = slideCount - 1;
+
+//for progress bar
+let progressRatio = 100 / slideCount;
+let progressStep = 1;
+progress.style.width = progressRatio * progressStep + "%";
+console.log(progress.style.width, slideCount)
+prevBtn.style.display = "none"
+prevBtn.addEventListener('click', () => {
+
+  position += slideWidth;
+  position = Math.min(position, 0);
+  slide.style.transform = `translateX(${position}px)`;
+  slideIndicator++
+  nextBtn.style.display = "block";
+  if(slideIndicator === slideCount - 1){
+    prevBtn.style.display = "none"
+  }
+  captionCount--;
+caption.textContent = captionText[captionCount];
+//progress
+progressStep--;
+progress.style.width = progressRatio * progressStep + "%";
+
+}); 
+
+nextBtn.addEventListener('click', () => {
+position -= slideWidth;
+position = Math.max(position, -slideWidth * (slideCount - 1));
+slide.style.transform = `translateX(${position}px)`;
+slideIndicator--
+if(slideIndicator === 0){
+  nextBtn.style.display = "none";
+}
+prevBtn.style.display = "block";
+captionCount++;
+caption.textContent = captionText[captionCount];
+
+
+progressStep++;
+progress.style.width = progressRatio * progressStep + "%";
+
+});
