@@ -104,11 +104,12 @@ body::-webkit-scrollbar-thumb:hover{
     margin:auto;
     transition: 0.4s ease-in-out;
     cursor: pointer;
-    background: white;
+    background: rgb(255, 255, 255);
 }
 .card img{
     width:100%;
     margin-top: 35px;
+    background: rgb(255, 255, 255);
 }
 .name{
     font-weight: bold;
@@ -214,6 +215,7 @@ body::-webkit-scrollbar-thumb:hover{
     height:100%;
     border-radius:50% ;
     border:3px solid rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.439);
 }
 .shape{
     background: rgb(255, 255, 255);
@@ -330,11 +332,17 @@ body::-webkit-scrollbar-thumb:hover{
 
 /*carousel*/
 .carousel-section{
-    width: 100%;
+    width:;
+    overflow: ;
+    margin:;
+    padding:5px;
+    
+
 }
 .carousel-container {
-    width: 400px;
-    margin: 0 auto;
+    width:90%;
+    max-width:400px;
+    margin: 25px auto;
     position: relative;
     overflow: hidden;
     border: 10px solid;
@@ -343,13 +351,14 @@ body::-webkit-scrollbar-thumb:hover{
   
   .carousel-slide {
     display: flex;
-    height:268px;
+    height:;
     transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     
   }
   
   .carousel-slide img {
-    width: 400px;
+    width:100%;
+    max-width:500px;
     height: auto;
   }
   
@@ -358,19 +367,20 @@ body::-webkit-scrollbar-thumb:hover{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2em;
+    font-size: 10px;
     text-decoration: none;
-    color: #eee0ed;
+    color: #eb0bdc;
     cursor: pointer;
-    padding: 4px;
-    box-shadow: 0px 0px 10px 0px rgb(240, 235, 240);
+    padding: 6px 7px;
+    box-shadow: 0px 0px 10px 0px #eb0bdcc5;
     border-radius:360px;
-    transition: 0.3px ;
-    background: rgba(204, 45, 219, 0.674);
+    transition: 0.3s ;
+    background: rgba(7, 6, 6, 0.571);
   }
   .carousel-next:active, 
   .carousel-prev:active{
     background: rgba(79, 16, 85, 0.674);
+    box-shadow: 0px 0px 10px 0px #5b0455;
   }
   .carousel-prev {
     left: 10px;
@@ -382,7 +392,7 @@ body::-webkit-scrollbar-thumb:hover{
 
 .carousel-caption{
     position: absolute;
-    top:90%;
+    top:85%;
     left:0;
     right:0;
     transform: translateY(-50%);
@@ -398,9 +408,10 @@ body::-webkit-scrollbar-thumb:hover{
     height:4px;
     width:100px;
     position: absolute;
+    overflow:hidden;
     top:5%;
    left:5%;
-   background-color: rgba(230, 221, 230, 0.593);
+   background-color: rgba(230, 221, 230, 0.764);
    border-radius:2px ;
    overflow: hidden;
    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.646);
@@ -408,7 +419,7 @@ body::-webkit-scrollbar-thumb:hover{
 .progress{
     height:100%;
     width:0%;
-    background: rgba(108, 19, 116, 0.674);
+    background: rgb(255, 153, 0);
     transition: width 0.5s ease-in-out;
 }
 
