@@ -332,7 +332,8 @@ body::-webkit-scrollbar-thumb:hover{
 
 /*carousel*/
 .carousel-section{
-    width:;
+    width:100%;
+    display:;
     overflow: ;
     margin:;
     padding:5px;
@@ -478,7 +479,46 @@ body::-webkit-scrollbar-thumb:hover{
     left:10px;
     margin-top:5px;
 }
-
+/*course*/
+.progress-course-bar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #d67ff9c1;
+    position: relative;
+    overflow: hidden;
+   
+  }
+  
+  .progress-course-bar::before {
+    content: ;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: #d67ff9c1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    padding:auto; 
+  }
+.barValue{
+    display: block;
+    background: #f8f5f9;
+    position: absolute;
+    z-index: 2;
+    height:40px;
+    width:20px;
+    border-radius: 50%;
+    top:0;
+    left:5px;
+    bottom: 0;
+    margin:auto;
+    padding:0px 10px;
+    text-align:center;
+    line-height:40px;
+    border:none;
+}
 /*projects*/
 #projects .content a{
    text-decoration: none;
@@ -563,6 +603,12 @@ body::-webkit-scrollbar-thumb:hover{
 }
 #contact .contact-holder .content p{
     font-size:30px;
+}
+/*footer*/
+footer{
+    background: #000000;
+    text-align: center;
+    padding: 5px;
 }
 /*for mobile screen*/
 @media  (min-width:480px) and (max-width:990px){
@@ -679,3 +725,12 @@ body::-webkit-scrollbar-thumb:hover{
         margin:10px;
     }
 }
+
+.clipped-object {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    clip-path:;
+}
+  

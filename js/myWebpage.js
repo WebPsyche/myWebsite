@@ -204,3 +204,25 @@ progressStep++;
 progress.style.width = progressRatio * progressStep + "%";
 
 });
+
+    
+function updateProgressBar() {
+  const progressBar = document.querySelectorAll('.progress-course-bar');
+  for(let i = 0; i < progressBar.length; i++){
+
+ let progress =  progressBar[i].dataset.progress
+  const angle = (360 * progress) / 100;
+  progressBar[i].style.backgroundImage = `linear-gradient(${90 + angle}deg, transparent 50%, #e19a0c 50%), linear-gradient(90deg, #e19a0c 50%, transparent 50%)`;
+}
+}
+
+const barValue = document.querySelectorAll('.barValue');
+for(let i = 0; i < barValue.length; i++){
+  //barValue[]
+}
+updateProgressBar();
+
+    
+  
+
+
