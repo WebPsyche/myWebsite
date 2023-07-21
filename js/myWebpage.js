@@ -222,7 +222,52 @@ for(let i = 0; i < barValue.length; i++){
 }
 updateProgressBar();
 
-    
-  
+    //tooltip
 
+    const imageContainer = document.querySelector('.carousel-slide');
+    const image = document.querySelectorAll('.carousel-slide img');
+    const tooltip = document.getElementById('tooltip');
+    
+    imageContainer.addEventListener('mousemove', (e) => {
+     
+      const mouseX = e.clientX - imageContainer.getBoundingClientRect().left;
+      const mouseY = e.clientY - imageContainer.getBoundingClientRect().top;
+
+     
+    
+      tooltip.style.display = 'block';
+      setTimeout(() => {
+        tooltip.style.display = 'none';
+      }, 1000);
+      tooltip.style.left = `${mouseX + 10}px`;
+      tooltip.style.top = `${mouseY + 10}px`;
+
+      //for zooming
+      
+    });
+    
+    imageContainer.addEventListener('mouseout', () => {
+      tooltip.style.display = 'none';
+      image.classList.remove('zoomed');
+      image.style.transformOrigin = "0 0";
+    });
+
+    for(let i = 0; i < image.length; i++){
+  image[i].addEventListener('mousemove', (e)=>{
+    const rect = image[i].getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const percentX = mouseX / rect.width;
+    const percentY = mouseY / rect.height;
+    image[i].classList.add('zoomed');
+    image[i].style.transformOrigin = `${percentX * 100}% ${percentY * 100}%`;
+  })
+
+  image[i].addEventListener('mouseout', () => {
+    image[i].classList.remove('zoomed');
+    image[i].style.transformOrigin = "0 0";
+  });
+}
+   
+    
 
